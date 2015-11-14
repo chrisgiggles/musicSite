@@ -3,7 +3,6 @@ var path = require('path');
 
 module.exports = {
     entry: [
-        'webpack/hot/only-dev-server',
         './client/app.js'
     ],
     devtool: process.env.WEBPACK_DEVTOOL || 'source-map',

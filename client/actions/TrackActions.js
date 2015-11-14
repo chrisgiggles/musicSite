@@ -1,3 +1,3 @@
 import Reflux from 'reflux';
-const TrackActions = Reflux.createActions(['fetchAll']);
+const TrackActions = Reflux.createActions(['fetchTracks']);
 export default TrackActions;

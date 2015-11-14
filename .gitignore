@@ -10,3 +10,4 @@ logs
 Vagrantfile
 
 .idea/
+.DS_Store

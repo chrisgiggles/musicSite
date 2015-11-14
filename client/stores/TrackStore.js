@@ -4,22 +4,21 @@ import TrackActions from './../actions/TrackActions.js';
 import valsArray from './../utils/valsArray.js';
 
 const TrackStore = Reflux.createStore({
-    self: this,
     listenables: [TrackActions],
     trackList: [],
     apiUrl: 'http://localhost:5000/',
 
     init: function() {
+        console.log('Listenables -->', this.listenables);
         this.fetchTracks();
     },
 
     fetchTracks: function() {
-        function getTracks(err, res) {
+        request('GET', 'http://localhost:5000/').end( (err, res) => {
             if (err) throw err;
             this.trackList = valsArray(res.body);
             this.trigger(this.trackList);
-        }
-        request('GET', 'http://localhost:5000/').end(getTracks.bind(this));
+        });
     }
 });
 
