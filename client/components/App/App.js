@@ -13,7 +13,7 @@ class App extends React.Component {
 
         return(
             <div className='base'>
-                <Header title='EightOhEight'/>
+                <Header title='Todo App'/>
                 {console.log('Props -->', this.props.children)}
                 { this.props.children }
                 <Footer/>

@@ -13,8 +13,8 @@ class Header extends React.Component {
             <header>
                 {this.props.title}
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/tracks'>List all tracks</Link></li>
+                    <li><Link to='/'>List all</Link></li>
+                    <li><Link to='/add'>Add</Link></li>
                 </ul>
             </header>
         );
