@@ -1,23 +1,28 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router';
 
-class TrackListing extends React.Component { //React.Component
+class AddTodo extends React.Component { //React.Component
 
     constructor(props) {
         super(props);
-
+        
         this.handleSubmit = this.handleSubmit.bind(this);
+        console.log('AddTodo.js constructor this.props -->', this.props);
     }
 
     handleSubmit(e) {
-        console.log('AddTodo.js handleSubmit e -->', e);
+        e.preventDefault();
+        const input = ReactDOM.findDOMNode(this.refs.input);
+        //store.dispatch(addTodo(input.value));
     }
     
     render() {
         return(
             <div>
                 <form action="#" onSubmit={this.handleSubmit}>
-                    <label htmlFor="todo">Todo: </label><input name="todo" type="text"/>
+                    <label htmlFor="todo">Todo: </label>
+                    <input name="todo" type="text" ref="input"/>
                     <input type="submit"/>
                 </form>
             </div>
@@ -25,4 +30,9 @@ class TrackListing extends React.Component { //React.Component
     }
 }
 
-export default TrackListing;
+function select(state) {
+    //??
+}
+
+//export default connect(select)(AddTodo);
+export default AddTodo;

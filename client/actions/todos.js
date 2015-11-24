@@ -10,4 +10,3 @@ export function addTodo(text) {
         text: text
     }
 }
-
